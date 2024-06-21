@@ -1,0 +1,48 @@
+package bank.model.cards;
+
+public class BankCard extends Card implements CardDataAccess{
+
+	protected double balance; //karttaki para miktarı
+
+    public BankCard(){
+        super();
+        this.balance = 0;
+    }
+
+    public BankCard(String last_date, double balance){ //overload
+    	super(last_date);
+    	this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+    
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public int getCVC() {
+        return CVC;
+    }
+
+    public void setCVC(int CVC) {
+        this.CVC = CVC;
+    }
+
+    public String getLast_date() {
+        return last_date;
+    }
+
+    public void setLast_date(String last_date) {
+        this.last_date = last_date;
+    }
+}

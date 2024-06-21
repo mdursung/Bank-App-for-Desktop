@@ -1,0 +1,20 @@
+package cards;
+
+public class BankCard extends Card {
+
+	protected double balance;
+
+    public BankCard(){
+        super();
+    }
+
+    public BankCard(String card_number, String CVC, String last_date){ super(card_number, CVC, last_date);}
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+}

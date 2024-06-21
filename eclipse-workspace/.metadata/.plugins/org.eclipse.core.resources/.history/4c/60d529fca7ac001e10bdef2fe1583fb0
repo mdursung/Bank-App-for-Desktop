@@ -1,0 +1,11 @@
+package data;
+
+import java.util.HashMap;
+
+import user.Customer;
+
+public class Data {
+	
+    public static HashMap<String, Customer> users = new HashMap<>();
+
+}

@@ -1,0 +1,66 @@
+package user;
+
+import accounts.*;
+
+
+public class User implements Citizen{
+
+    protected String name;
+    protected String lastName;
+    protected String TC;
+    protected String gender;
+    protected int age;
+    protected Account account;
+
+    User(String name, String lastName, String TC, String gender, int age, Account account){
+    	this.name
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastName;
+    }
+
+    public void setLastname(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getTC() {
+        return TC;
+    }
+
+    public void setTC(String TC) {
+        this.TC = TC;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+}

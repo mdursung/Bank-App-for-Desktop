@@ -1,0 +1,46 @@
+package bank.model.cards;
+
+import bank.utils.BankUtils;
+
+public abstract class Card implements CardData {
+
+	protected int cvc;
+	protected String lastDate;
+	protected String cardNumber;
+
+	public Card() {
+		this("30.01.2034");
+	}
+
+	public Card(String lastDate) {
+		this.lastDate = lastDate;
+		this.cvc = BankUtils.createCvc();
+		this.cardNumber = BankUtils.createCardNumber();
+	}
+
+	@Override
+	public int getCvc() {
+		return this.cvc;
+	}
+
+	public String getLastDate() {
+		return this.lastDate;
+	}
+	
+	public String getCardNumber() {
+		return this.cardNumber;
+	}
+	
+
+	public void setCvc(int CVC) {
+		
+	}
+	
+	public void setLastDate(String lastDate) {
+		
+	}
+	
+	public void setCardNumber(String cardNumber) {
+		
+	}
+}

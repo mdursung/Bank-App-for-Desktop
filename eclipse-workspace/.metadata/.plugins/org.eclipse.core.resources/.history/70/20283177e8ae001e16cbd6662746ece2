@@ -1,0 +1,7 @@
+package cards;
+
+public interface CardDataAccess {
+	
+	public int getCardNumber();
+
+}

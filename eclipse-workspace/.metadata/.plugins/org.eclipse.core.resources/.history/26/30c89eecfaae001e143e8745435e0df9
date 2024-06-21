@@ -1,0 +1,25 @@
+package bank.model.cards;
+
+public class CreditCard extends Card implements CardData{
+	
+	protected double limit=0; //kart limiti
+
+	
+	public CreditCard() { 
+		super();
+	}
+	
+    public CreditCard(String lastDate, int limit){ //overload
+    	super(lastDate);
+    	this.limit = limit;
+    }
+
+    
+    public double getLimit() {
+        return limit;
+    }
+
+    public void setLimit(double limit) {
+        this.limit = limit;
+    }
+}

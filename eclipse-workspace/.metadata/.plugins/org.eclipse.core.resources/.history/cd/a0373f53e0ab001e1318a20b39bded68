@@ -1,0 +1,20 @@
+package user;
+
+public class Employeer extends User {
+
+    String rank;
+    
+    Employeer(String rank){
+    	this.rank = rank;
+    }
+
+    public boolean accept(){
+        return true;
+    }
+
+    public boolean refuse(){
+        return false;
+    }
+
+
+}

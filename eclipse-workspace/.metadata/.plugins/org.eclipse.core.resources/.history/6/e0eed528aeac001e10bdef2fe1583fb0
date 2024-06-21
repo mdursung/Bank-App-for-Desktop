@@ -1,0 +1,26 @@
+package data;
+
+import java.util.*;
+
+import user.Customer;
+
+public abstract class Database {
+	
+    public static HashMap<String, Customer> users = new HashMap<>();
+    
+    String job1 = "Bilgisayar Mühendisi";
+    String name1 = "Muhammet";
+    String lastName1 = "Gönültaş";
+    String TC1 = "15174304221";
+    String Erkek = "Erkek";
+    int age1 = 19;
+    String password1 = "Muhammet";
+    
+    Customer(String job, String name, String lastName, String TC, String gender, int age, String password)
+    
+    Customer customer1 = new Customer
+    
+    users.put(customer1.getTC(), customer1);
+    
+
+}

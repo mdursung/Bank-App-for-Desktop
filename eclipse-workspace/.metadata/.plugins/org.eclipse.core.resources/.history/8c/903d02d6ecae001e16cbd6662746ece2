@@ -1,0 +1,24 @@
+package data;
+
+import java.util.*;
+
+import user.Customer;
+
+public abstract class Data {
+	
+	//Verilerin saklanacağı kısım
+    public static HashMap<String, Customer> users = new HashMap<>(); // LOGIN VE REGİSTER PAGE İÇİN
+    
+    public static HashMap<String, Customer> ibanDatas = new HashMap<>(); // PARA AKTARIMI İÇİN IBAN TUTULACAK4
+    
+    String job1 = "Bilgisayar Mühendisi";
+    String name1 = "Muhammet";
+    String lastName1 = "Gönültaş";
+    String TC1 = "15174304221";
+    String Erkek = "Erkek";
+    int age1 = 19;
+    String password1 = "Muhammet";
+	Customer customer1 = new Customer(job1, name1, lastName1, TC1, Erkek, age1, password1);
+    
+
+}

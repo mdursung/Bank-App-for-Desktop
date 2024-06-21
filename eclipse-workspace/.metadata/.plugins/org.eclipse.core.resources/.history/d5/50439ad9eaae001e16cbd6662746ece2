@@ -1,0 +1,49 @@
+package cards;
+
+public class CreditCard extends Card implements CardDataAccess{
+	
+	protected double limit=0; //kart limiti
+
+	
+	public CreditCard() { 
+		super();
+	}
+	
+    public CreditCard(String last_date, int limit){ //overload
+    	super(last_date);
+    	this.limit = limit;
+    }
+
+    
+    public double getLimit() {
+        return limit;
+    }
+
+    public void setLimit(double limit) {
+        this.limit = limit;
+    }
+    
+    public int getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(int cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public int getCVC() {
+        return CVC;
+    }
+
+    public void setCVC(int CVC) {
+        this.CVC = CVC;
+    }
+
+    public String getLast_date() {
+        return last_date;
+    }
+
+    public void setLast_date(String last_date) {
+        this.last_date = last_date;
+    }
+}

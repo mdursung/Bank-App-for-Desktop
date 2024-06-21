@@ -1,0 +1,14 @@
+package bank.data;
+
+import java.util.*;
+
+import user.Customer;
+
+public abstract class Data {
+	
+	//Verilerin saklanacağı kısım
+    public static HashMap<String, Customer> users = new HashMap<>(); // LOGIN VE REGİSTER PAGE İÇİN
+    
+    public static HashMap<String, Customer> ibanDatas = new HashMap<>(); // PARA AKTARIMI İÇİN IBAN TUTULACAK4
+
+}

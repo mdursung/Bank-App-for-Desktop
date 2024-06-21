@@ -1,0 +1,9 @@
+package cards;
+
+public interface CardDataAccess {
+	
+	public int getCardNumber();
+	public void setCardNumber(int cardNumber);
+	public int getCVC();
+	public void setCVC(int CVC)
+}

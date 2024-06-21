@@ -1,0 +1,21 @@
+package user;
+
+public class Employeer extends User {
+
+    protected String rank;
+    protected Account account;
+    
+    Employeer(String rank, String name, String lastName, String TC, String gender, int age){
+    	this.rank = rank;
+    }
+
+    public boolean accept(){
+        return true;
+    }
+
+    public boolean refuse(){
+        return false;
+    }
+
+
+}

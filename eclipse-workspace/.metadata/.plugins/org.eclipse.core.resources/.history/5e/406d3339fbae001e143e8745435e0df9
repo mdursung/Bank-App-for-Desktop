@@ -1,0 +1,18 @@
+package bank.model.accounts;
+
+import bank.model.cards.Card;
+
+public interface AccountData {
+
+	String getPassword();
+
+	void setPassword(String password);
+
+	String getIBAN();
+
+	void setIBAN(String IBAN);
+
+	Card getCard();
+
+	void setCard(Card card);
+}

@@ -1,0 +1,58 @@
+package bank.model.user;
+
+public abstract class User implements Citizen {
+
+	protected int age;
+	protected String tc;
+	protected String name;
+	protected String lastName;
+	protected String gender;
+
+	public User(String tc, String name, String lastName, String gender, int age) {
+		this.tc = tc;
+		this.age = age;
+		this.name = name;
+		this.lastName = lastName;
+		this.gender = gender;
+	}
+
+	public String getTC() {
+		return tc;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getLastname() {
+		return lastName;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public void setTC(String TC) {
+		this.TC = TC;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+}

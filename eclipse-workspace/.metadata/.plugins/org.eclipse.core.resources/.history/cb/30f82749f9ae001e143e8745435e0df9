@@ -1,0 +1,44 @@
+package bank.model.accounts;
+
+import java.util.Random;
+
+import bank.model.cards.BankCard;
+import bank.model.cards.Card;
+import bank.utils.BankUtils;
+
+public class Account implements Access {
+
+	protected Card card;
+	protected String password;
+	protected String IBAN;
+
+	public Account(String password) {
+		this.password = password;
+		this.card = new BankCard();
+		this.IBAN = BankUtils.createIban();
+	}
+
+	public String getPassword() { // override
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getIBAN() {
+		return IBAN;
+	}
+
+	public void setIBAN(String IBAN) {
+		this.IBAN = IBAN;
+	}
+
+	public Card getCard() {
+		return card;
+	}
+
+	public void setCard(Card card) {
+		this.card = card;
+	}
+}

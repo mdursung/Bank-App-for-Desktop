@@ -1,0 +1,14 @@
+package data;
+
+import java.util.*;
+
+import user.Customer;
+
+public abstract class Data {
+	
+	//Verilerin saklanacağı kısım
+    public static HashMap<String, Customer> users = new HashMap<>(); // LOGIN VE REGİSTER PAGE İÇİN
+    
+    public static HashMap<String, Customer> users2 = new HashMap<>(); // IBANLARIN SAKLANMASI İÇİN
+
+}

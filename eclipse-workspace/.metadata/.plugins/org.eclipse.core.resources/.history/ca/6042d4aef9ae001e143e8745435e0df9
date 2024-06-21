@@ -1,0 +1,26 @@
+package bank.model.cards;
+
+import java.util.Random;
+
+import bank.utils.BankUtils;
+
+public class Card {
+
+	static Random random = new Random();
+	static int randomInt;
+	protected String cardNumber;
+	protected int CVC;
+	protected String last_date;
+
+	public Card() {
+		this("30.01.2034");
+	}
+
+	public Card(String last_date) {
+		this.cardNumber = BankUtils.cardNumberCreater()
+		this.CVC = CVCCreater();
+		this.last_date = last_date;
+	}
+
+
+}

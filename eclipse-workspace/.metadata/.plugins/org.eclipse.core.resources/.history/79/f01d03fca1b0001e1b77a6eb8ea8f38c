@@ -1,0 +1,57 @@
+package bank.model.accounts;
+
+import java.util.List;
+
+import bank.model.cards.BankCard;
+import bank.model.cards.Card;
+import bank.utils.BankUtils;
+
+public class Account implements AccountData {
+
+	protected Card card;
+	protected String iban;
+	protected String password;
+	protected List<Card> cards;
+
+	public Account(String password) {
+		this.password = password;
+		this.card = new BankCard();
+		this.iban = BankUtils.createIban();
+		cards.add(card);
+	}
+
+	@Override
+	public Card getCard() {
+		return card;
+	}
+
+	@Override
+	public String getIban() {
+		return iban;
+	}
+
+	@Override
+	public String getPassword() {
+		return password;
+	}
+	
+	public String getCards() {
+		return iban;
+	}
+
+	@Override
+	public void setCard(Card card) {
+		this.card = card;
+	}
+
+	@Override
+	public void setIban(String iban) {
+		this.iban = iban;
+	}
+
+	@Override
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+}

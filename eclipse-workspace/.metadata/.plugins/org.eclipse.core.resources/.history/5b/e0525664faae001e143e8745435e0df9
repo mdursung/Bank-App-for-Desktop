@@ -1,0 +1,17 @@
+package bank.model.cards;
+
+public interface CardDataAccess {
+
+	int getCVC();
+	
+	String getLastDate();
+	
+	String getCardNumber();
+	
+
+	void setCVC(int CVC);
+	
+	void setLastDate(String lastDate);
+	
+	void setCardNumber(String cardNumber);
+}

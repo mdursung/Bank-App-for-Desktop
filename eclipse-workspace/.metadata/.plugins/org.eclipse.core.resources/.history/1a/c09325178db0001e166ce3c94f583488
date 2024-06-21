@@ -1,0 +1,106 @@
+package bank.gui;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+import bank.model.user.Customer;
+
+import java.awt.Color;
+import javax.swing.JButton;
+
+import bank.data.Data;
+import bank.model.cards.*;
+import javax.swing.JCheckBox;
+import java.awt.Font;
+
+public class payBillPage {
+
+	private JFrame frame;
+	private Customer customer;
+
+
+	/**
+	 * Create the application.
+	 */
+	public payBillPage(Customer customer) {
+		this.customer = customer;
+		initialize();
+		frame.setVisible(true);
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(205, 171, 143));
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnGnder = new JButton("Gönder");
+		btnGnder.setBounds(149, 213, 117, 25);
+		frame.getContentPane().add(btnGnder);
+		btnGnder.setFocusPainted(false);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("Su - 450 tl");
+		chckbxNewCheckBox.setBounds(8, 42, 166, 23);
+		frame.getContentPane().add(chckbxNewCheckBox);
+		
+		JCheckBox chckbxDoalgaz = new JCheckBox("Doğalgaz - 700 tl");
+		chckbxDoalgaz.setBounds(8, 81, 166, 23);
+		frame.getContentPane().add(chckbxDoalgaz);
+		
+		JCheckBox chckbxKrediBorcu = new JCheckBox("Kredi Borcu - 350");
+		chckbxKrediBorcu.setBounds(8, 122, 166, 23);
+		frame.getContentPane().add(chckbxKrediBorcu);
+		
+		JCheckBox chckbxElektrik = new JCheckBox("Elektrik -790");
+		chckbxElektrik.setBounds(8, 162, 166, 23);
+		frame.getContentPane().add(chckbxElektrik);
+		
+		JCheckBox chckbxTelefon = new JCheckBox("Telefon - 33");
+		chckbxTelefon.setBounds(235, 42, 172, 23);
+		frame.getContentPane().add(chckbxTelefon);
+		
+		JCheckBox chckbxArabaTaksidi = new JCheckBox(" Araba Taksidi - 71");
+		chckbxArabaTaksidi.setBounds(235, 81, 172, 23);
+		frame.getContentPane().add(chckbxArabaTaksidi);
+		
+		JCheckBox chckbxNewCheeckBox = new JCheckBox("Ev Kirası - 400");
+		chckbxNewCheeckBox.setToolTipText("");
+		chckbxNewCheeckBox.setBounds(235, 122, 172, 23);
+		frame.getContentPane().add(chckbxNewCheeckBox);
+		
+		JCheckBox chckbxEclipseAbonelii = new JCheckBox("Eclipse Aboneliği - 80$");
+		chckbxEclipseAbonelii.setFont(new Font("Dialog", Font.BOLD, 11));
+		chckbxEclipseAbonelii.setBounds(235, 163, 172, 23);
+		frame.getContentPane().add(chckbxEclipseAbonelii);
+		
+		JLabel lblHangisinideyeceksiniz = new JLabel("Hangilerini Ödeyeceksiniz?");
+		lblHangisinideyeceksiniz.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHangisinideyeceksiniz.setBounds(111, 12, 197, 15);
+		frame.getContentPane().add(lblHangisinideyeceksiniz);
+		btnGnder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BankCard bankcard = (BankCard) customer.getAccount().getCard();
+				double x = 0;
+				
+				
+				bankcard.setBalance(bankcard.getBalance()-Double.parseDouble(paraVeri.getText()));
+				
+
+				new MenuPage(customer);
+				frame.dispose();
+			}
+		});
+	}
+}

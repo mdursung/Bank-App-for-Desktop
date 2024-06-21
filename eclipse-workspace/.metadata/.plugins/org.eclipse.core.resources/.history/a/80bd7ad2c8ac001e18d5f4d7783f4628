@@ -1,0 +1,13 @@
+package data;
+
+import java.util.*;
+
+import user.Customer;
+
+public abstract class Database {
+	
+    public static HashMap<String, Customer> users = new HashMap<>(); //static
+    
+    public static HashMap<String, Customer> users2 = new HashMap<>();
+
+}

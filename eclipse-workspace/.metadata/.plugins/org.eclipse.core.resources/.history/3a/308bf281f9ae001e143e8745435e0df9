@@ -1,0 +1,31 @@
+package bank.utils;
+
+import java.util.Random;
+
+public class BankUtils {
+	
+	private static Random random = new Random();
+
+	public static String createIban() {
+		String IBAN = "TR67 0001 0002";
+		for (int i = 0; i < 4; i++)
+			IBAN += String.valueOf(random.nextInt(1000, 9999));
+		return IBAN;
+	}
+	
+	public static int createCvc() {
+		return random.nextInt(100, 999);
+	}
+
+	public static String cardNumberCreater() { // static method
+
+		String cardNumber = "";
+
+		for (int i = 0; i < 4; i++) {
+			randomInt = 1000 + random.nextInt(9000);
+			cardNumber = cardNumber + " " + String.valueOf(randomInt);
+		}
+
+		return cardNumber;
+	}
+}

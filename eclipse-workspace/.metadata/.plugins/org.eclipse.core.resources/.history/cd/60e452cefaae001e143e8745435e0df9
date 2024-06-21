@@ -1,0 +1,23 @@
+package bank.model.cards;
+
+public class BankCard extends Card {
+
+	protected double balance; // karttaki para miktarı
+
+	public BankCard() {
+		this.balance = 0;
+	}
+
+	public BankCard(String lastDate, double balance) { // overload
+		super(last_date);
+		this.balance = balance;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+}

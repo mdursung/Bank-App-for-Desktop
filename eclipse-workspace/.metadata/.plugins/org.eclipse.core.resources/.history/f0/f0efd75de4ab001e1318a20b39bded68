@@ -1,0 +1,19 @@
+package cards;
+
+public class CreditCard extends Card {
+	
+	protected double limit;
+
+    public CreditCard(String last_date, int limit){
+    	super(last_date);
+    	this.limit = limit;
+    }
+
+    public double getLimit() {
+        return limit;
+    }
+
+    public void setLimit(double limit) {
+        this.limit = limit;
+    }
+}

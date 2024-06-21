@@ -1,0 +1,28 @@
+package cards;
+
+public class Card {
+
+	protected int cardNumber;
+	protected int CVC;
+	protected String last_date;
+	public static int cardCount = 0;
+	public static int CVCCount = 0;
+
+    public Card(){
+        this.cardNumber = cardCount;
+        this.CVC = CVCCount;
+        this.last_date = "30.01.2034";
+        cardCount++;
+        CVCCount++;
+    }
+
+    public Card(String last_date){
+        this.cardNumber = cardCount;
+        this.CVC = CVCCount;
+        this.last_date = last_date;
+        cardCount++;
+        CVCCount++;
+    }
+
+
+}

@@ -1,0 +1,56 @@
+package accounts;
+
+import cards.*;
+
+public class Account implements Access{
+
+	protected Card card;
+	protected String password;
+	protected String IBAN;
+	double random = Math.random();
+	
+	
+	public static String IBANCreater() { //static method
+	    
+
+	    String IBAN = "";
+	    
+	    for(int i=0; i<4; i++) {
+		    int randomDouble = (int)Math.random() * 9999;
+		    IBAN = IBAN + " " + String.valueOf(randomDouble);
+	    }
+	    
+	    String tr = "TR67 0001 0002";
+	    return tr + IBAN;
+	}
+
+    public Account(String password) {
+        this.password = password;
+        this.IBAN = IBANCreater();
+        this.card = new BankCard(); //polimorfizm
+    }
+
+    public String getPassword() { //override
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getIBAN() {
+        return IBAN;
+    }
+
+    public void setIBAN(String IBAN) {
+        this.IBAN = IBAN;
+    }
+
+	public Card getCard() {
+		return card;
+	}
+
+	public void setCard(Card card) {
+		this.card = card;
+	}
+}

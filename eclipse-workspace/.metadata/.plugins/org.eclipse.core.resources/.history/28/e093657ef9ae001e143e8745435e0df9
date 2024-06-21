@@ -1,0 +1,15 @@
+package bank.utils;
+
+import java.util.Random;
+
+public class BankUtils {
+	
+	private static Random random = new Random();
+
+	public static String createIban() {
+		String IBAN = "TR67 0001 0002";
+		for (int i = 0; i < 4; i++)
+			IBAN += String.valueOf(random.nextInt(1000, 9999));
+		return IBAN;
+	}
+}

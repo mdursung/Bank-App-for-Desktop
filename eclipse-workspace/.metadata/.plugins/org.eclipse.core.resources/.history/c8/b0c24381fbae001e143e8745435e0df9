@@ -1,0 +1,25 @@
+package bank.model.user;
+
+public interface Citizen {
+
+	public int getAge();
+	
+	public String getTc();
+	
+	public String getName();
+
+	public String getLastname();
+
+	public String getGender();
+
+
+	public void setName(String name);
+
+	public void setLastname(String lastName);
+
+	public void setAge(int age);
+
+	public void setTc(String tc);
+
+	public void setGender(String gender);
+}

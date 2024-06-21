@@ -1,0 +1,42 @@
+
+
+import cards.BankCard;
+import data.Data;
+import gui.*;
+import user.Customer;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+    	
+        String job1 = "Bilgisayar Mühendisi";
+        String name1 = "Muhammet";
+        String lastName1 = "Gönültaş";
+        String TC1 = "15174304221";
+        String Erkek = "Erkek";
+        int age1 = 19;
+        String password1 = "Muhammet";
+    	Customer customer1 = new Customer(job1, name1, lastName1, TC1, Erkek, age1, password1);
+    	
+        String job2 = "Futbolcu";
+        String name2 = "Arda";
+        String lastName2 = "Güler";
+        String TC2 = "17594360021";
+        int age2 = 18;
+        String password2 = "RealMadrid";
+    	Customer customer2 = new Customer(job2, name2, lastName2, TC2, Erkek, age2, password2);
+    	
+    	BankCard bankcard = (BankCard)customer1.getAccount().getCard();
+    	bankcard.setBalance(100000);
+    	bankcard = (BankCard)customer2.getAccount().getCard();
+    	bankcard.setBalance(676575750);
+        
+        Data.users.put(customer1.getTC(), customer1);
+        Data.users.put(customer2.getTC(), customer2);
+
+        new LoginPage();
+
+    }
+
+}

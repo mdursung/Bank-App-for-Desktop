@@ -1,0 +1,33 @@
+package user;
+
+import accounts.*;
+
+
+public class Customer extends User {
+
+	protected String job;
+	protected Account account;
+    
+    Customer(String job, Account account, String name, String lastName, String TC, String gender, int age){
+    	super();
+        this.job = job;
+        this.account = account;
+    }
+    
+	public String getJob() {
+		return job;
+	}
+	
+	public void setJob(String job) {
+		this.job = job;
+	}
+	
+	public Account getAccount() {
+		return account;
+	}
+	
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+}

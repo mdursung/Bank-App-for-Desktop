@@ -1,0 +1,17 @@
+package bank.user;
+
+public interface Citizen {
+	
+	//gerekli fonksiyonlar
+	public String getName();
+	public String getLastname();
+	public String getTC();
+	public String getGender();
+	public int getAge();
+	
+	public void setName(String name);
+	public void setLastname(String lastName);
+	public void setAge(int age);
+	public void setTC(String TC);
+	public void setGender(String gender);
+}

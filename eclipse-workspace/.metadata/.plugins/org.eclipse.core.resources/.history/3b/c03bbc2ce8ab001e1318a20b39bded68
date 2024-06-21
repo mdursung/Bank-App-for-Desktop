@@ -1,0 +1,14 @@
+package accounts;
+
+import cards.*;
+
+public interface Access {
+
+	public String getPassword();
+	public void setPassword(String password);
+	public int getIBAN();
+	public void setIBAN(String IBAN);
+	public Card getCard();
+	public void setCard(Card card);
+
+}

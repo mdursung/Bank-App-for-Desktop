@@ -1,0 +1,34 @@
+package cards;
+
+import java.util.Random;
+
+public class Card {
+
+	static Random random = new Random();
+	static int randomDouble;
+	protected int cardNumber;
+	protected int CVC;
+	protected String last_date;
+
+    public Card(){
+    	this("30.01.2034");
+    }
+
+    public Card(String last_date){
+        this.cardNumber = ;
+        this.CVC = CVCCreater();;
+        this.last_date = last_date;
+    }
+    
+    public static String CVCCreater() { //static method
+	    
+	    String IBAN = "";
+	    
+	    for(int i=0; i<4; i++) {
+		    randomInt = 100 + random.nextInt(900);
+	    }
+	    
+	    return randomInt;
+	}
+    
+}

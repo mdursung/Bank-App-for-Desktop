@@ -1,0 +1,27 @@
+package user;
+
+import accounts.*;
+
+
+public class Customer extends User {
+
+    private String job;
+    private Account account;
+    
+	public String getJob() {
+		return job;
+	}
+	
+	public void setJob(String job) {
+		this.job = job;
+	}
+	
+	public Account getAccount() {
+		return account;
+	}
+	
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+}

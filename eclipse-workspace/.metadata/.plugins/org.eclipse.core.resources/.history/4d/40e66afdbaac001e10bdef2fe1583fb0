@@ -1,0 +1,159 @@
+package gui;
+
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import data.Database;
+import user.Customer;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
+import java.awt.Color;
+import javax.swing.JPanel;
+
+public class LoginPage {
+
+	private JFrame frame;
+	private JTextField loginTC;
+	private JTextField loginPassword;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LoginPage window = new LoginPage();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public LoginPage() {
+		initialize();
+		frame.setVisible(true);
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 681, 494);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
+		
+		loginTC = new JTextField();
+		loginTC.setBounds(244, 110, 180, 34);
+		frame.getContentPane().add(loginTC);
+		loginTC.setColumns(10);
+		
+		loginPassword = new JTextField();
+		loginPassword.setColumns(10);
+		loginPassword.setBounds(244, 184, 180, 34);
+		frame.getContentPane().add(loginPassword);
+		
+		JButton loginButton = new JButton("Giriş Yap");
+		loginButton.setForeground(new Color(143, 240, 164));
+		loginButton.setBackground(new Color(145, 65, 172));
+		loginButton.setFocusPainted(false);
+		loginButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			    
+			    String job1 = "Bilgisayar Mühendisi";
+			    String name1 = "Muhammet";
+			    String lastName1 = "Gönültaş";
+			    String TC1 = "15174304221";
+			    String Erkek = "Erkek";
+			    int age1 = 19;
+			    String password1 = "Muhammet";
+				Customer customer1 = new Customer(job1, name1, lastName1, TC1, Erkek, age1, password1);
+			    
+			    Database.users.put(customer1.getTC(), customer1);
+			    
+				if(Database.users.get(loginTC.getText()).getAccount().getPassword().equals(loginPassword.getText())) {
+					new MenuPage();
+					frame.setVisible(false);
+				
+				}
+				
+				else{
+					JOptionPane.showMessageDialog(null, "Kullanıcı bulunamadı veya şifre hatalı!");
+					
+				}
+			}
+		});
+		loginButton.setBounds(269, 261, 129, 25);
+		frame.getContentPane().add(loginButton);
+		
+		JButton yeniHesapButton = new JButton("Yeni Hesap");
+		yeniHesapButton.setForeground(new Color(143, 240, 164));
+		yeniHesapButton.setBackground(new Color(145, 65, 172));
+		yeniHesapButton.setFocusPainted(false);
+		yeniHesapButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		yeniHesapButton.setBounds(269, 315, 129, 25);
+		frame.getContentPane().add(yeniHesapButton);
+		
+		JLabel id = new JLabel("TC:");
+		id.setHorizontalAlignment(SwingConstants.RIGHT);
+		id.setBounds(175, 119, 51, 15);
+		frame.getContentPane().add(id);
+		
+		JLabel sifre = new JLabel("Şifre:");
+		sifre.setHorizontalAlignment(SwingConstants.RIGHT);
+		sifre.setBounds(175, 193, 51, 15);
+		frame.getContentPane().add(sifre);
+		
+		JLabel hasCiftlikBank = new JLabel("HASÇİFTLİK BANK");
+		hasCiftlikBank.setHorizontalAlignment(SwingConstants.CENTER);
+		hasCiftlikBank.setBounds(244, 29, 180, 15);
+		frame.getContentPane().add(hasCiftlikBank);
+		
+		JButton yetkiliGirisButton = new JButton("Yetkili Girişi");
+		yetkiliGirisButton.setForeground(new Color(143, 240, 164));
+		yetkiliGirisButton.setBackground(new Color(145, 65, 172));
+		yetkiliGirisButton.setBounds(269, 367, 129, 25);
+		yetkiliGirisButton.setFocusPainted(false);
+		frame.getContentPane().add(yetkiliGirisButton);
+		
+		JLabel lblNewLabel = new JLabel("Sektörün En Hası!");
+		lblNewLabel.setBounds(341, 56, 134, 15);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(477, 0, 194, 464);
+		frame.getContentPane().add(panel);
+		String imagePath = "hasbank.jpg";
+	    ImageIcon icon = new ImageIcon(imagePath);
+	    Image image = icon.getImage();
+	    JLabel label = new JLabel(new ImageIcon(image));
+	    panel.add(label);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(0, 0, 180, 464);
+		frame.getContentPane().add(panel_2);
+	}
+}

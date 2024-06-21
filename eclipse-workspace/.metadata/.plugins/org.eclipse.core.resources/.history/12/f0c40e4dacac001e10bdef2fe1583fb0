@@ -1,0 +1,11 @@
+package data;
+
+import java.util.*;
+
+import user.Customer;
+
+public abstract class Database {
+	
+    public static HashMap<String, Customer> users = new HashMap<>();
+
+}

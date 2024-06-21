@@ -1,0 +1,40 @@
+package bank.model.cards;
+
+import java.util.Random;
+
+public class Card {
+
+	static Random random = new Random();
+	static int randomInt;
+	protected String cardNumber;
+	protected int CVC;
+	protected String last_date;
+
+    public Card(){
+    	this("30.01.2034");
+    }
+
+    public Card(String last_date){
+        this.cardNumber = cardNumberCreater();
+        this.CVC = CVCCreater();;
+        this.last_date = last_date;
+    }
+    
+    public static int CVCCreater() { //static method
+	    
+		randomInt = 100 + random.nextInt(900);
+	    return randomInt;
+	}
+    
+	public static String cardNumberCreater() { //static method
+		
+		String cardNumber = ""; 
+	    
+	    for(int i=0; i<4; i++) {
+		    randomInt = 1000 + random.nextInt(9000);
+		    cardNumber = cardNumber + " " + String.valueOf(randomInt);
+	    }
+	    
+	    return cardNumber;
+	}
+}
